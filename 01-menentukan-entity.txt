@@ -1,0 +1,10 @@
+Entity :
+Artist
+Album 
+Song
+Cataegory
+Playlist
+Podcast
+Episode 
+User 
+Concert
