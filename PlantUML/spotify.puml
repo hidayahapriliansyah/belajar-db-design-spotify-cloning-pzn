@@ -89,4 +89,19 @@ entity Concert {
   lon : DOUBLE
   lat : DOUBLE
 }
+
+
+Artist }|--|{ Album : Has
+Album }|--|{ Song : Contains
+Artist }|--|{ Song : Sing
+PlaylistCategory }o--|{ Playlist : Contains
+User ||--|{ Playlist : Create
+Playlist }o--o{ Song : Contains
+PodcastCategory |o--|{ Podcast : Contains
+User ||--o{ Podcast : Create
+Podcast ||--o{ Episode : Contains
+Artist }|--o{ Concert : Perform
+User }o--o{ Artist : Follow
+User }o--o{ Song : Liked Song
+User }o--o{ Playlist : Follow
 @enduml
