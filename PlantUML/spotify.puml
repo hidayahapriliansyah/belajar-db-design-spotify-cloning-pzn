@@ -1,38 +1,92 @@
-@startuml
+@startuml SpotifyDatabaseDesign
 entity Artist {
-
+  * id : VARCHAR
+  --
+  * name : VARCHAR
+  instagram : VARCHAR
+  twitter : VARCHAR
+  facebook : VARCHAR
+  wikipedia : VARCHAR
+  bio : TEXT
 }
 
 entity Album {
-
+  * id : VARCHAR 
+  --
+  * title : VARCHAR
+  * release : YEAR
+  * image : VARCHAR
 }
 
 entity Song {
-
+  * id VARCHAR 
+  --
+  * album_id : VARCHAR
+  * title : VARCHAR
+  * duration : INT
 }
 
-entity Category {
-
+entity PlaylistCategory {
+  * id : VARCHAR
+  --
+  * name : VARCHAR 
+  * image : VARCHAR
+  * icon : VARCHAR
 }
 
 entity Playlist {
+  * id :  VARCHAR
+  --
+  * name : VARCHAR
+  image : VARCHAR
+  description : VARCHAR
+  category_id : VARCHAR
+  * user_id : VARCHAR
+}
 
+entity PodcastCategory {
+  * id : VARCHAR
+  --
+  * name : VARCHAR 
+  * image : VARCHAR
+  * icon : VARCHAR
 }
 
 entity Podcast {
-
+  * id :  VARCHAR
+  --
+  * name : VARCHAR
+  image : VARCHAR
+  about : VARCHAR
+  category_id : VARCHAR
+  * user_id : VARCHAR
 }
 
 entity Episode {
-
+  * id : VARCHAR
+  --
+  * podcast_id : VARCHAR
+  * title : VARCHAR 
+  description : VARCHAR
+  published_at : DATE
+  duration : INT
 }
 
 entity User {
-
+  * id : VARCHAR
+  --
+  * name : VARCHAR
+  * email : VARCHAR
+  birthday : DATE
 }
 
-entity Concer {
-
+entity Concert {
+  * id : VARCHAR
+  --
+  * event_at : DATETIME
+  * location : VARCHAR
+  * url : VARCHAR
+  lon : DOUBLE
+  lat : DOUBLE
 }
-
 @enduml
